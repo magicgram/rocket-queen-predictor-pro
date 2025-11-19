@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import type { User } from '../types';
 import { usePrediction } from '../services/authService';
@@ -138,7 +139,7 @@ const PredictorView = React.memo((props: {
                         <img 
                             src="https://i.postimg.cc/3N7cr754/Picsart-25-11-18-12-04-40-325.png" 
                             alt="Rocket Queen" 
-                            className="absolute bottom-1/2 translate-y-1/4 w-full max-w-[320px] drop-shadow-[0_10px_15px_rgba(0,0,0,0.4)] select-none z-0"
+                            className="absolute bottom-1/2 translate-y-1/2 w-full max-w-[320px] drop-shadow-[0_10px_15px_rgba(0,0,0,0.4)] select-none z-0"
                             draggable="false" onContextMenu={(e) => e.preventDefault()}
                         />
                     </div>
