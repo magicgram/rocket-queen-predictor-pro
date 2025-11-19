@@ -1,3 +1,4 @@
+
 import React, { useState, useCallback } from 'react';
 import { verifyUser, VerificationResponse } from '../services/authService';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -230,7 +231,7 @@ const LoginScreen: React.FC<LoginScreenProps> = ({
         ) : (
           <>
             <img src="https://i.postimg.cc/T3YfXCF3/Picsart-25-11-18-15-14-16-994.png" alt={t('unlockPredictions')} className="w-48 h-48 object-contain mb-4" style={{filter: 'drop-shadow(0 10px 8px rgba(0,0,0,0.4))'}} draggable="false" onContextMenu={(e) => e.preventDefault()}/>
-            <h1 className="text-5xl font-russo uppercase text-white tracking-wider" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.5)' }}>{t('unlockPredictions')}</h1>
+            <h1 className="text-4xl font-russo uppercase text-white tracking-wider mx-auto max-w-[260px] leading-none" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.5)' }}>{t('unlockPredictions')}</h1>
             <p className="text-sm font-poppins font-light text-white/80 mt-2 mb-8 uppercase tracking-wide">{t('enterPlayerIdToSync')}</p>
             
             <div className="w-full space-y-5">
