@@ -23,6 +23,26 @@
       .font-russo {
         font-family: 'Russo One', sans-serif;
       }
+
+      @keyframes shine-move {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+      }
+      
+      .shine-mask {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(105deg, transparent 20%, rgba(255,255,255,0.3) 40%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0.3) 60%, transparent 80%);
+        background-size: 200% 100%;
+        animation: shine-move 4s infinite linear;
+        pointer-events: none;
+        mask-repeat: no-repeat;
+        -webkit-mask-repeat: no-repeat;
+        mask-position: center;
+        -webkit-mask-position: center;
+        mask-size: contain;
+        -webkit-mask-size: contain;
+      }
     </style>
   <script type="importmap">
 {

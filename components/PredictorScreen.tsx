@@ -24,6 +24,8 @@ const MenuIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
 
 const LimitReachedView = React.memo(({ handleDepositRedirect }: { handleDepositRedirect: () => void; }) => {
   const { t } = useLanguage();
+  const imgUrl = "https://i.postimg.cc/3N7cr754/Picsart-25-11-18-12-04-40-325.png";
+
   return (
      <div 
         className="w-full h-screen text-white flex flex-col font-poppins relative overflow-hidden items-center justify-center p-4"
@@ -49,12 +51,18 @@ const LimitReachedView = React.memo(({ handleDepositRedirect }: { handleDepositR
 
         <main className="flex flex-col items-center justify-center w-full max-w-sm text-center z-20">
           <div className="w-full bg-black/20 backdrop-blur-md rounded-2xl p-6 md:p-8">
-              <img 
-                src="https://i.postimg.cc/3N7cr754/Picsart-25-11-18-12-04-40-325.png" 
-                alt="Rocket Queen" 
-                className="w-48 h-48 object-contain drop-shadow-[0_10px_15px_rgba(0,0,0,0.4)] select-none mx-auto -mt-28 mb-2"
-                draggable="false" onContextMenu={(e) => e.preventDefault()}
-              />
+              <div className="relative w-48 h-48 mx-auto -mt-28 mb-2">
+                  <img 
+                    src={imgUrl} 
+                    alt="Rocket Queen" 
+                    className="w-full h-full object-contain drop-shadow-[0_10px_15px_rgba(0,0,0,0.4)] select-none"
+                    draggable="false" onContextMenu={(e) => e.preventDefault()}
+                  />
+                  <div 
+                    className="shine-mask" 
+                    style={{ maskImage: `url(${imgUrl})`, WebkitMaskImage: `url(${imgUrl})` }}
+                  />
+              </div>
               <h1 className="text-3xl font-russo uppercase text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}>
                   {t('reDepositMessageTitle')}
               </h1>
@@ -85,6 +93,7 @@ const PredictorView = React.memo((props: {
 }) => {
     const { t } = useLanguage();
     const [currentTime, setCurrentTime] = useState('');
+    const imgUrl = "https://i.postimg.cc/3N7cr754/Picsart-25-11-18-12-04-40-325.png";
 
     useEffect(() => {
         const updateTime = () => {
@@ -136,12 +145,23 @@ const PredictorView = React.memo((props: {
                 
                  <main className="flex-grow w-full flex flex-col items-center justify-end px-4 pb-10">
                     <div className="relative w-full flex-grow flex items-center justify-center">
-                        <img 
-                            src="https://i.postimg.cc/3N7cr754/Picsart-25-11-18-12-04-40-325.png" 
-                            alt="Rocket Queen" 
-                            className="absolute bottom-1/2 translate-y-1/2 w-full max-w-[320px] drop-shadow-[0_10px_15px_rgba(0,0,0,0.4)] select-none z-0"
-                            draggable="false" onContextMenu={(e) => e.preventDefault()}
-                        />
+                        <div className="absolute bottom-1/2 translate-y-1/2 w-full max-w-[320px] z-0">
+                            <img 
+                                src={imgUrl} 
+                                alt="Rocket Queen" 
+                                className="w-full h-auto drop-shadow-[0_10px_15px_rgba(0,0,0,0.4)] select-none"
+                                draggable="false" onContextMenu={(e) => e.preventDefault()}
+                            />
+                            <div 
+                                className="shine-mask" 
+                                style={{ 
+                                    maskImage: `url(${imgUrl})`, 
+                                    WebkitMaskImage: `url(${imgUrl})`,
+                                    maskSize: '100% 100%',
+                                    WebkitMaskSize: '100% 100%'
+                                }}
+                            />
+                        </div>
                     </div>
                 
                     <div className="w-full flex flex-col items-center justify-center flex-shrink-0">

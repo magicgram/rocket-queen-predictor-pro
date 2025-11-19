@@ -205,6 +205,9 @@ const LoginScreen: React.FC<LoginScreenProps> = ({
   const handleBackFromDeposit = useCallback(() => setNeedsDeposit(false), []);
   const handleBackFromReDeposit = useCallback(() => setNeedsReDeposit(false), []);
 
+  // Image URL for the login screen
+  const loginImgSrc = "https://i.postimg.cc/T3YfXCF3/Picsart-25-11-18-15-14-16-994.png";
+
   return (
     <div 
         className="w-full min-h-screen flex flex-col items-center justify-between p-4 relative overflow-hidden font-poppins" 
@@ -230,7 +233,24 @@ const LoginScreen: React.FC<LoginScreenProps> = ({
             </div>
         ) : (
           <>
-            <img src="https://i.postimg.cc/T3YfXCF3/Picsart-25-11-18-15-14-16-994.png" alt={t('unlockPredictions')} className="w-48 h-48 object-contain mb-4" style={{filter: 'drop-shadow(0 10px 8px rgba(0,0,0,0.4))'}} draggable="false" onContextMenu={(e) => e.preventDefault()}/>
+            <div className="relative w-48 h-48 mb-4 mx-auto">
+              <img 
+                src={loginImgSrc} 
+                alt={t('unlockPredictions')} 
+                className="w-full h-full object-contain relative z-10" 
+                style={{filter: 'drop-shadow(0 10px 8px rgba(0,0,0,0.4))'}} 
+                draggable="false" 
+                onContextMenu={(e) => e.preventDefault()}
+              />
+              <div 
+                className="shine-mask z-20" 
+                style={{
+                  maskImage: `url(${loginImgSrc})`,
+                  WebkitMaskImage: `url(${loginImgSrc})`
+                }}
+              />
+            </div>
+            
             <h1 className="text-4xl font-russo uppercase text-white tracking-wider mx-auto max-w-[260px] leading-none" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.5)' }}>{t('unlockPredictions')}</h1>
             <p className="text-sm font-poppins font-light text-white/80 mt-2 mb-8 uppercase tracking-wide">{t('enterPlayerIdToSync')}</p>
             
