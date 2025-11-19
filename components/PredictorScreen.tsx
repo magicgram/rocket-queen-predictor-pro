@@ -166,12 +166,22 @@ const PredictorView = React.memo((props: {
                 
                     <div className="w-full flex flex-col items-center justify-center flex-shrink-0">
                         <div className="relative w-52 h-52 flex-shrink-0 flex items-center justify-center">
-                            {/* Static circles */}
-                            <div className="absolute inset-0 rounded-full bg-[#3a112f]"></div>
-                            <div className="absolute inset-0 rounded-full border-4 border-[#1e0c18]"></div>
-                            <div className="absolute inset-2 rounded-full border-2 border-pink-400/50"></div>
+                            {/* Glow Animation */}
+                            <div className="absolute inset-0 rounded-full bg-pink-500/20 blur-xl animate-pulse"></div>
                             
-                            <p className="font-sans font-black text-white whitespace-nowrap text-5xl z-10" style={{textShadow: '0 2px 4px rgba(0,0,0,0.5)'}}>
+                            {/* Base Background */}
+                            <div className="absolute inset-0 rounded-full bg-[#3a112f] z-0 shadow-lg shadow-pink-900/40"></div>
+
+                            {/* Outer Border */}
+                            <div className="absolute inset-0 rounded-full border-4 border-[#1e0c18] z-20"></div>
+                            
+                            {/* Spinning Ring */}
+                            <div className="absolute inset-2 rounded-full border-2 border-transparent border-t-pink-400 border-b-pink-400 z-10 animate-[spin_3s_linear_infinite]"></div>
+                            
+                            {/* Inner Static Ring */}
+                            <div className="absolute inset-2 rounded-full border-2 border-pink-400/20 z-10"></div>
+                            
+                            <p className="font-sans font-black text-white whitespace-nowrap text-5xl z-30" style={{textShadow: '0 2px 4px rgba(0,0,0,0.5)'}}>
                                {props.displayValue}
                             </p>
                         </div>
